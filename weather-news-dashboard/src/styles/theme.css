@@ -1,0 +1,35 @@
+:root {
+/* Light Mode */
+--bg: #f7f7f7;
+--text: #222;
+--card-bg: white;
+--accent-color: #007bff;
+--accent-hover-color: #0056b3;
+--border-color: #ccc;
+--divider-color: #eee;
+--hover-bg: #f0f0f0;
+--secondary-text: #888;
+--error-bg: #f8d7da;
+}
+
+.dark {
+/* Dark Mode */
+--bg: #1a1a1a;
+--text: #fff;
+--card-bg: #2a2a2a;
+--accent-color: #4a90e2; /* Slightly lighter blue for dark mode visibility */
+--accent-hover-color: #6daaf7;
+--border-color: #444;
+--divider-color: #444;
+--hover-bg: #3c3c3c;
+--dark-hover-bg: #3c3c3c; /* Specific dark mode hover */
+--secondary-text: #bbb;
+--error-bg: #3d1c1f;
+}
+
+body {
+background: var(--bg);
+color: var(--text);
+font-family: 'Inter', sans-serif;
+transition: background 0.3s, color 0.3s;
+}

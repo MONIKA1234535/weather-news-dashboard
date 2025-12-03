@@ -1,0 +1,203 @@
+/* Base Layout */
+.dashboard-container {
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
+}
+
+h1 {
+font-size: 2.5em;
+margin-bottom: 20px;
+text-align: center;
+border-bottom: 2px solid var(--text);
+padding-bottom: 10px;
+}
+
+h2 {
+font-size: 1.8em;
+margin: 20px 0 15px 0;
+}
+
+/* Search Box */
+.search-box {
+display: flex;
+gap: 10px;
+margin-bottom: 40px;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+input {
+padding: 12px;
+flex: 1;
+border: 1px solid #ccc;
+border-radius: 8px;
+background: var(--card-bg);
+color: var(--text);
+}
+
+button {
+padding: 12px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+/* Content Grid (for Weather and News sections) */
+.content-grid {
+display: grid;
+grid-template-columns: 1fr; /* Single column on mobile */
+gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .content-grid {
+        grid-template-columns: 2fr 1fr; /* 2/3 for weather, 1/3 for news on desktop */
+    }
+    .news-section {
+        max-height: 80vh; /* Constrain news list height */
+        overflow-y: auto; /* Allow scrolling for long lists */
+    }
+}
+
+/* --------------------
+   Weather Card Styles 
+   -------------------- */
+.weather-card {
+border: 1px solid var(--text);
+border-radius: 12px;
+padding: 25px;
+background: var(--card-bg);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card.error-state {
+border-color: #dc3545;
+color: #dc3545;
+background-color: #f8d7da;
+padding: 20px;
+text-align: center;
+}
+
+.city-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #eee;
+padding-bottom: 15px;
+margin-bottom: 15px;
+}
+
+.city-name {
+font-size: 2em;
+font-weight: bold;
+}
+
+.weather-icon {
+font-size: 4em;
+line-height: 1;
+}
+
+.temperature-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.current-temp {
+font-size: 4em;
+font-weight: 300;
+}
+
+.description {
+margin-bottom: 20px;
+font-size: 1.1em;
+text-transform: capitalize;
+}
+
+.details-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin-top: 15px;
+text-align: center;
+}
+
+.detail-item {
+padding: 10px;
+border: 1px dashed #ccc;
+border-radius: 6px;
+}
+
+.detail-item .label {
+display: block;
+font-size: 0.8em;
+opacity: 0.7;
+}
+
+.detail-item .value {
+display: block;
+font-size: 1.2em;
+font-weight: bold;
+}
+
+/* --------------------
+   News List Styles 
+   -------------------- */
+.news-list {
+background: var(--card-bg);
+border: 1px solid var(--text);
+border-radius: 12px;
+padding: 10px 15px;
+}
+
+.news-article {
+display: block;
+padding: 12px 5px;
+border-bottom: 1px solid #eee;
+text-decoration: none;
+color: var(--text);
+transition: background-color 0.2s;
+}
+
+.news-article:last-child {
+border-bottom: none;
+}
+
+.news-article:hover {
+background-color: #f0f0f0; /* Light hover background */
+border-radius: 4px;
+}
+
+.dark .news-article:hover {
+    background-color: #2a2a2a; /* Dark hover background */
+}
+
+.news-title {
+font-size: 1.1em;
+font-weight: bold;
+margin-bottom: 5px;
+line-height: 1.3;
+}
+
+.news-meta {
+display: flex;
+justify-content: space-between;
+font-size: 0.8em;
+color: #888;
+}
+
+.news-list.empty-state, .weather-card.initial-state {
+padding: 20px;
+text-align: center;
+font-style: italic;
+color: #999;
+}

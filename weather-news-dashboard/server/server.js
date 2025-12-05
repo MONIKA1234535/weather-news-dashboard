@@ -7,6 +7,7 @@ import cors from 'cors';
 // CRITICAL: Must use .js extension for local file imports in ESM mode
 import weatherRoutes from './routes/weatherRoutes.js';
 import newsRoutes from './routes/newsRoutes.js';
+import authRoutes from './routes/authRoutes.js'; // 👈 NEW: Import Auth Routes
 
 // **THE FIX:** We check for the default export (`.default`) or use the module itself
 // This handles compatibility for modules originally written in CommonJS
@@ -29,6 +30,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+app.use('/api/auth', authRoutes); // 👈 NEW: Register Auth Routes
 app.use('/api/weather', weatherRoutes);
 app.use('/api/news', newsRoutes);
 

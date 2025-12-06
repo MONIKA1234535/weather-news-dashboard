@@ -1,5 +1,5 @@
 // Load environment variables from server/.env
-import 'dotenv/config'; 
+import 'dotenv/config';
 import * as expressModule from 'express'; // Import Express using a wildcard
 import mongoose from 'mongoose';
 import cors from 'cors'; 
